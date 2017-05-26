@@ -20,10 +20,6 @@ public class SortingTest {
 
         Iterable<Integer> sorted = sorter.getSortedIterable(strSequence);
 
-        while (sorted.hasNext()) {
-            System.out.println(sorted.next());
-        }
-
         Assertions.assertArrayEquals(new Integer[]{1,2,3,4,5}, sorted.getValues());
     }
 
