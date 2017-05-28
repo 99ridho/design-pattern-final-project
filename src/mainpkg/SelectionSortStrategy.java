@@ -1,8 +1,5 @@
 package mainpkg;
 
-/**
- * Created by ridho on 5/26/17.
- */
 public class SelectionSortStrategy<T> implements SortStrategy<T> {
 
     private static SelectionSortStrategy instance = null;
@@ -15,6 +12,8 @@ public class SelectionSortStrategy<T> implements SortStrategy<T> {
         return instance;
     }
 
+    private SelectionSortStrategy() {}
+
     @Override
     public Iterable<T> doSort(Iterable<T> i) {
         T[] values = i.getValues();
@@ -22,7 +21,7 @@ public class SelectionSortStrategy<T> implements SortStrategy<T> {
         for (int outerIdx = 0 ; outerIdx < values.length - 1 ; outerIdx++) {
             int min = outerIdx;
             for (int innerIdx = outerIdx + 1 ; innerIdx < values.length ; innerIdx++) {
-                if (values[innerIdx].hashCode() < values[min].hashCode()) {
+                if (Math.abs(values[innerIdx].hashCode()) < Math.abs(values[min].hashCode())) {
                     min = innerIdx;
                 }
             }

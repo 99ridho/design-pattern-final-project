@@ -1,14 +1,11 @@
 package mainpkg;
 
-/**
- * Created by ridho on 5/26/17.
- */
 public class Sequence<T> implements Iterable {
 
     private T[] values;
     private int currentIndex;
 
-    public Sequence(T[] values) {
+    public Sequence(T... values) {
         this.values = values;
         currentIndex = 0;
     }

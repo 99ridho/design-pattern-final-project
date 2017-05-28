@@ -1,8 +1,5 @@
 package mainpkg;
 
-/**
- * Created by ridho on 5/26/17.
- */
 public class Sorter<T> {
 
     private SortStrategy<T> strategy;
